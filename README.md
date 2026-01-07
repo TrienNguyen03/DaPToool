@@ -1,5 +1,5 @@
 
-### //ENGLISH BELOW/// ###
+### ///ENGLISH BELOW/// ###
 
 
 # 1. Đầu tiên thì cái này là gì?
@@ -70,4 +70,5 @@ AI_ENDPOINT= (Leave empty if you want. Actually, I have no idea what this does b
 - If you actually see this and want to commit/fix/add features, feel free! You are super welcome.
 
 Contact:
+
 discord.com/users/413205034692771850
