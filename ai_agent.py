@@ -6,7 +6,7 @@ import re
 from dataclasses import dataclass
 from typing import Any, Dict, Optional
 
-# dotenv optional (để app vẫn chạy nếu bạn chưa cài python-dotenv)
+# dotenv optional (để app vẫn chạy nếu chưa cài python-dotenv)
 try:
     from dotenv import load_dotenv
 
@@ -68,9 +68,7 @@ def _get_model(provider: str) -> str:
 
 
 def _compact_findings(findings_json: Dict[str, Any], max_chars: int = 4500) -> str:
-    """
-    Giữ prompt gọn kiểu build 1.0 (thực dụng), nhưng input là findings.json của build 2.0.
-    """
+
     tgt = findings_json.get("target", {}) or {}
     meta = findings_json.get("meta", {}) or {}
     findings = findings_json.get("findings", []) or []
@@ -123,12 +121,7 @@ def _fallback_mapping(findings_json: Dict[str, Any]) -> Dict[str, str]:
 
 
 def analyze_findings(findings_json: Dict[str, Any]) -> AIResult:
-    """
-    Build 3.0 contract:
-    - đọc env theo style build 2.0 (AI_PROVIDER/AI_API_KEY/AI_MODEL) :contentReference[oaicite:7]{index=7}
-    - vẫn hỗ trợ GEMINI_API_KEY kiểu build 1.0
-    - output AIResult ổn định cho reporter
-    """
+
     provider = _get_provider()
     if provider != "gemini":
         # để dễ mở rộng sau: openai/claude/custom (nhưng 3.0 implement gemini trước cho chắc)
@@ -150,7 +143,7 @@ def analyze_findings(findings_json: Dict[str, Any]) -> AIResult:
 
     compact = _compact_findings(findings_json)
 
-    # Prompt style: gọn + actionable như 1.0, nhưng trả về JSON để reporter ghép ổn định
+    # Prompt style: gọn + actionable 
     prompt = f"""
 Bạn là Senior Security Engineer đang viết ghi chú đánh giá an ninh cho một bài kiểm tra ĐƯỢC ỦY QUYỀN và KHÔNG PHÁ HOẠI (non-destructive).
 
@@ -200,3 +193,4 @@ DATA:
         remediation=str(parsed.get("remediation") or "").strip(),
         report_md=str(parsed.get("report_md") or "").strip(),
     )
+
