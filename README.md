@@ -20,10 +20,10 @@
 - Để call AI api cho nó phân tích log thì đầu tiên là phải có API key chứ đéo có ai cho key đâu :DDD
 - Call API thì đầu tiên tạo một file `.env` nội dung như sau:
 
-AI_PROVIDER= (openai/gemini/claude/thằng provider nào tùy bạn, nhớ bỏ dòng trong ngoặc nhá)
-AI_API_KEY=(Key ó, cái key API ó, cái key mà phải tự tìm chứ không ai cho ó, nhập key nhớ bỏ dòng trong ngoặc nhá)
-AI_MODEL= (model của AI, nhớ bỏ dòng trong ngoặc nhá)
-AI_ENDPOINT= (để trống cũng được, actually tui cũng chả biết tác dụng của cái này nhưng bỏ nó thì đéo chạy được nên meh, như trên, nhớ bỏ dòng trong ngoặc)
+`AI_PROVIDER= (openai/gemini/claude/thằng provider nào tùy bạn, nhớ bỏ dòng trong ngoặc nhá)`
+`AI_API_KEY=(Key ó, cái key API ó, cái key mà phải tự tìm chứ không ai cho ó, nhập key nhớ bỏ dòng trong ngoặc nhá)`
+`AI_MODEL= (model của AI, nhớ bỏ dòng trong ngoặc nhá)`
+`AI_ENDPOINT= (để trống cũng được, actually tui cũng chả biết tác dụng của cái này nhưng bỏ nó thì đéo chạy được nên meh, như trên, nhớ bỏ dòng trong ngoặc)`
 
 - Yes có thể làm ngắn hơn nhưng meh
 
@@ -58,10 +58,10 @@ discord.com/users/413205034692771850
 - To call the AI API for log analysis, first you need an API key (Ain't nobody giving you a free key here :DDD).
 - To setup the API, create a `.env` file like this:
 
-AI_PROVIDER= (openai/gemini/claude/whichever provider you want, remove WAHtever inside the brackets)
-AI_API_KEY=(The Key, yes THE key, the one you have to find yourself cause I ain't giving mine. Same here, remove the line inside the brackets when pasting)
-AI_MODEL= (The AI model, remove brackets)
-AI_ENDPOINT= (Leave empty if you want. Actually, I have no idea what this does but the code breaks without it, so meh. You know what to do here)
+`AI_PROVIDER= (openai/gemini/claude/whichever provider you want, remove WAHtever inside the brackets)`
+`AI_API_KEY=(The Key, yes THE key, the one you have to find yourself cause I ain't giving mine. Same here, remove the line inside the brackets when pasting)`
+`AI_MODEL= (The AI model, remove brackets)`
+`AI_ENDPOINT= (Leave empty if you want. Actually, I have no idea what this does but the code breaks without it, so meh. You know what to do here)`
 
 - Yes, the code could be shorter, but meh.
 
@@ -72,3 +72,4 @@ AI_ENDPOINT= (Leave empty if you want. Actually, I have no idea what this does b
 Contact:
 
 discord.com/users/413205034692771850
+
