@@ -28,6 +28,7 @@
 
 `AI_ENDPOINT= (để trống cũng được, actually tui cũng chả biết tác dụng của cái này nhưng bỏ nó thì đéo chạy được nên meh, như trên, nhớ bỏ dòng trong ngoặc)`
 
+- Nhớ là đặt `.env` chung thư mục với `ai_agent.py` nhá, không là khỏi call gì hết
 - Yes có thể làm ngắn hơn nhưng meh
 
 # 4. Kết
@@ -69,6 +70,7 @@ discord.com/users/413205034692771850
 
 `AI_ENDPOINT= (Leave empty if you want. Actually, I have no idea what this does but the code breaks without it, so meh. You know what to do here)`
 
+- Just remember to put the `.env` file in the same path as `ai_agent.py` or else it won't works as I intended to
 - Yes, the code could be shorter, but meh.
 
 # 4. Outro
@@ -78,5 +80,6 @@ discord.com/users/413205034692771850
 Contact:
 
 discord.com/users/413205034692771850
+
 
 
