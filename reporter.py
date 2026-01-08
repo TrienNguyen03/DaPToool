@@ -45,7 +45,7 @@ def _build_cve_section(cve_enrichment: Dict[str, Any]) -> str:
     attack_techniques = cve_enrichment.get("attack_techniques", {})
     
     lines = []
-    lines.append("## 🔍 CVE Intelligence & Threat Analysis\n")
+    lines.append("##  CVE Intelligence & Threat Analysis\n")
     
     # Summary stats
     lines.append("### Tổng quan CVE")
@@ -146,7 +146,7 @@ def _build_local_report(findings: Dict[str, Any]) -> str:
     if cve_enrichment:
         lines.append(_build_cve_section(cve_enrichment))
     
-    lines.append("## 🔎 Findings (Local Heuristics)\n")
+    lines.append("##  Findings (Local Heuristics)\n")
     if not items:
         lines.append("_No heuristic findings produced. Check evidence outputs for details._\n")
     else:
@@ -181,13 +181,13 @@ def _build_local_report(findings: Dict[str, Any]) -> str:
     if items:
         lines.append(_build_attack_methods_section(items))
     
-    lines.append("## 📊 Steps Executed\n")
+    lines.append("##  Steps Executed\n")
     steps = findings.get("steps", {})
     for jid, sps in steps.items():
         lines.append(f"### {jid}")
         for s in sps:
             if s.get("skipped"):
-                lines.append(f"- ⭕ {s.get('name')} (skipped: {s.get('skip_reason')})")
+                lines.append(f"-  {s.get('name')} (skipped: {s.get('skip_reason')})")
             else:
                 of = s.get("output_file")
                 of_rel = ""
@@ -202,11 +202,11 @@ def _build_local_report(findings: Dict[str, Any]) -> str:
                 )
         lines.append("")
 
-    lines.append("## ⚠️ Limitations\n")
+    lines.append("##  Limitations\n")
     for lim in findings.get("limitations", []):
         lines.append(f"- {lim}")
 
-    lines.append("\n## 📝 Notes\n")
+    lines.append("\n##  Notes\n")
     lines.append(
         "- This launcher is designed to be **safe**: no exploitation, no brute force. "
         "Use it for authorized assessments and still perform manual validation where needed."
@@ -229,7 +229,7 @@ def export_reports(run_dir: str, findings: Dict[str, Any], ai_result: Optional[A
         final_md = (
             local_md
             + "\n\n---\n\n"
-            + "# 🤖 AI Analysis\n\n"
+            + "#  AI Analysis\n\n"
             + f"- **Provider**: {ai_result.provider}\n"
             + f"- **Model**: {ai_result.model}\n\n"
             + "## Executive Summary\n\n"
@@ -240,16 +240,16 @@ def export_reports(run_dir: str, findings: Dict[str, Any], ai_result: Optional[A
         
         # NEW: Add CVE analysis if available
         if ai_result.cve_analysis:
-            final_md += "\n\n## 🔐 CVE Analysis (AI-Enhanced)\n\n" + ai_result.cve_analysis
+            final_md += "\n\n##  CVE Analysis (AI-Enhanced)\n\n" + ai_result.cve_analysis
         
         # NEW: Add attack analysis if available
         if ai_result.attack_analysis:
-            final_md += "\n\n## ⚔️ Attack Vector Analysis\n\n" + ai_result.attack_analysis
+            final_md += "\n\n##  Attack Vector Analysis\n\n" + ai_result.attack_analysis
         
         final_md += (
-            "\n\n## 🛠️ Remediation (Prioritized)\n\n"
+            "\n\n##  Remediation (Prioritized)\n\n"
             + _as_text(ai_result.remediation)
-            + "\n\n## 📄 Full AI-Generated Report\n\n"
+            + "\n\n##  Full AI-Generated Report\n\n"
             + _as_text(ai_result.report_md)
         )
 
