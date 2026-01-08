@@ -16,10 +16,6 @@ except Exception:
 import requests
 
 def fetch_cve_data(cve_id):
-    """
-    Lấy thông tin CVE từ kho dữ liệu của CIRCL (Computer Incident Response Center Luxembourg).
-    Nguồn này cực uy tín, free, không cần API Key, update cực nhanh.
-    """
     url = f"https://cve.circl.lu/api/cve/{cve_id}"
     try:
         response = requests.get(url, timeout=10)
@@ -284,4 +280,5 @@ def analyze_cve(self, cve_id):
         **MITRE Mapping:** (Map to ATT&CK Technique ID if possible)
         """
         
+
         # Gọi model.generate_content(prompt)...
